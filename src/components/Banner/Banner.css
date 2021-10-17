@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+
+.carousel-item img{
+    height:700px;
+}
+.carousel-caption{
+    color:#222f3e;
+    font-style:italic;
+    font-weight: 600;
+    font-family: 'Dancing Script', cursive;
+}
+.carousel-indicators [data-bs-target]{
+    background-color: #222f3e;
+}
