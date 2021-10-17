@@ -2,7 +2,7 @@
     {
         "id": 1,
         "name": "Neurology",
-        "description": "Neurology is a branch of medicine dealing with disorders of the nervous system. Neurology deals with the diagnosis and treatment of all categories of conditions and disease involving the central",
+        "description": "Neurology is a branch of medicine dealing with disorders of the nervous system. Neurology deals with the diagnosis and treatment of all categories of conditions and disease involving the centralIt has two major divisions: Central nervous system:",
         "img": "https://i.ibb.co/F0KMkGt/93187.jpg"
     },
     {
@@ -20,7 +20,7 @@
     {
         "id": 4,
         "name": "Oncology",
-        "description": "Oncology is a branch of medicine that deals with the prevention, diagnosis, and treatment of cancer. A medical professional who practices oncology is an oncologist. The name's etymological origin is the Greek word ὄγκος, meaning 1. burden, volume, mass and 2. barb,",
+        "description": "Oncology is a branch of medicine that deals with the prevention, diagnosis, and treatment of cancer. A medical professional who practices oncology is an oncologist. The name's etymological origin is the Greek word ὄγκος, meaning 1. burden, volume",
         "img": "https://i.ibb.co/zV1xqg4/download-3.jpg"
     },
     {
@@ -32,7 +32,7 @@
     {
         "id": 6,
         "name": "Orthopedics",
-        "description": "Orthopaedic surgery or orthopaedics, is the branch of surgery concerned with conditions involving the musculoskeletal system. Orthopaedic surgeons use both surgical and nonsurgical means to treat musculoskeletal trauma, spine diseases, sports injuries, degenerative diseases, infections, tumors, and congenital disorders.",
+        "description": "Orthopaedic surgery or orthopaedics, is the branch of surgery concerned with conditions involving the musculoskeletal system. Orthopaedic surgeons use both surgical and nonsurgical means to treat musculoskeletal trauma, spine diseases",
         "img": "https://i.ibb.co/vhyNXj6/Female-patient-examining-spine-at-physiotherapist-at-vertebrology-center.jpg"
     },
     {

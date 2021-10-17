@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta&family=Noto+Sans+Display&display=swap');
+#services-container{
+    margin:50px 0;
+}
+.section-title{
+    color:#5f27cd;
+    font-family: 'Mukta', sans-serif;
+font-family: 'Noto Sans Display', sans-serif
+}
+#services-container .card{
+  padding: 15px 15px 15px 15px;
+  box-sizing: border-box;  
+  margin-top: 10px;
+ 
+}
+#services-container .card:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: 0.6s;
+
+}
+#services-container .card img{
+    border-radius: 10px;
+}
+

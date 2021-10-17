@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mukta&family=Noto+Sans+Display&display=swap');
+#service .card-title{
+    color:#ff6b6b ;
+    font-family: 'Noto Sans Display', sans-serif;
+    margin-bottom: 10px;
+}
+#service .card-text{
+    font-family: 'Mukta', sans-serif;
+    text-align: left;
+    
+}
+
+#service .card-footer{
+    border-top: 0px;
+    background-color: rgba(0, 0, 0,0.5);
+}
+.btn-service-details {background-image: linear-gradient(to right, #DC2424 0%, #4A569D  51%, #DC2424  100%)}
+.btn-service-details {
+   margin: 10px auto;
+   padding: 10px 25px;
+   text-align: center;
+   text-transform: uppercase;
+   transition: 0.5s;
+   background-size: 200% auto;
+   color: white;            
+   border-radius: 10px;
+   display: block;
+   border:0px;
+ }
+
+ .btn-service-details:hover {
+   background-position: right center; /* change the direction of the change here */
+   color: #fff;
+   text-decoration: none;
+ }
