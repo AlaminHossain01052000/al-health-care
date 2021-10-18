@@ -4,8 +4,10 @@ import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 
 import Home from './components/Home/Home';
+import Login from './components/Login/Login';
 import ServiceDetails from './components/ServiceDetails/ServiceDetails';
 import ServicesRoute from './components/ServicesRoute/ServicesRoute';
+import Signup from './components/Signup/Signup';
 import SpecialistDetails from './components/SpecialistDetails/SpecialistDetails';
 
 function App() {
@@ -32,6 +34,12 @@ function App() {
           <Route path="/specialistDetails/:specialistId">
 
             <SpecialistDetails></SpecialistDetails>
+          </Route>
+          <Route path="/signup">
+            <Signup></Signup>
+          </Route>
+          <Route path="/login">
+            <Login></Login>
           </Route>
         </Switch>
         <Footer></Footer>

@@ -23,7 +23,7 @@ const Specialist = (props) => {
                         <p style={{ color: "#1dd1a1" }}><i className="fas fa-phone-alt me-3"></i>{phone}</p>
                         <p style={{ color: "#ff9f43" }}><i className="fas fa-globe me-3"></i> www.{website}</p>
                     </Card.Text>
-                    <Button className="btn-book-now mx-auto" onClick={() => showSpecialistsDetails(id)}>Book Now</Button>
+                    <Button className="btn-book-now mx-auto" onClick={() => showSpecialistsDetails(id)}>Details</Button>
                 </Card.Body>
             </Card>
         </div>

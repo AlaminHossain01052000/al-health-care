@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import useFirebase from '../../hooks/useFirebase';
 import "./Header.css";
 
 const Header = () => {
     const [navBg, setNavbg] = useState(false);
+    const { user, logOut } = useFirebase();
     const changeBg = () => {
         if (window.scrollY > 100) {
             setNavbg(true)
@@ -14,6 +16,7 @@ const Header = () => {
         }
 
     }
+
     useEffect(() => {
         if (navBg) {
             const myNavbar = document.getElementById("my-navbar");
@@ -53,14 +56,17 @@ const Header = () => {
                                 <NavDropdown.Item href="#action/3.3">Nephrologist</NavDropdown.Item>
 
                             </NavDropdown>
-                            <Nav.Link href="#home">Sign In</Nav.Link>
+
+                            <Nav.Link as={Link} to="/login">Log In</Nav.Link>
+
                             <Nav.Link href="#home">View Appointments</Nav.Link>
                             <Nav.Link href="#home">Contact Us</Nav.Link>
 
                         </Nav>
-                        <Nav.Link href="#home"><button className="btn btn-register">Register</button></Nav.Link>
+                        <Nav.Link as={Link} to="/signup"><button className="btn btn-register">Register</button></Nav.Link>
 
                     </Navbar.Collapse>
+
                 </Container>
             </Navbar>
         </div>
