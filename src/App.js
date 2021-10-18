@@ -4,7 +4,9 @@ import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 
 import Home from './components/Home/Home';
+import ServiceDetails from './components/ServiceDetails/ServiceDetails';
 import ServicesRoute from './components/ServicesRoute/ServicesRoute';
+import SpecialistDetails from './components/SpecialistDetails/SpecialistDetails';
 
 function App() {
 
@@ -23,6 +25,13 @@ function App() {
           <Route path="/services">
             <ServicesRoute></ServicesRoute>
 
+          </Route>
+          <Route path="/servicedetails/:serviceId">
+            <ServiceDetails></ServiceDetails>
+          </Route>
+          <Route path="/specialistDetails/:specialistId">
+
+            <SpecialistDetails></SpecialistDetails>
           </Route>
         </Switch>
         <Footer></Footer>

@@ -1,11 +1,15 @@
 import React from 'react';
 import { Card, Button } from 'react-bootstrap';
+import { useHistory } from 'react-router';
 import "./Specialist.css";
 
 const Specialist = (props) => {
-    const { img, name, specialist, email, phone, website } = props.specialist;
+    const history = useHistory();
+    const { id, img, name, specialist, email, phone, website } = props.specialist;
 
-
+    const showSpecialistsDetails = id => {
+        history.push(`/specialistDetails/${id}`)
+    }
     return (
         <div id="specialist">
             <Card style={{ width: '18rem' }}>
@@ -19,7 +23,7 @@ const Specialist = (props) => {
                         <p style={{ color: "#1dd1a1" }}><i className="fas fa-phone-alt me-3"></i>{phone}</p>
                         <p style={{ color: "#ff9f43" }}><i className="fas fa-globe me-3"></i> www.{website}</p>
                     </Card.Text>
-                    <Button className="btn-book-now mx-auto">Book Now</Button>
+                    <Button className="btn-book-now mx-auto" onClick={() => showSpecialistsDetails(id)}>Book Now</Button>
                 </Card.Body>
             </Card>
         </div>
