@@ -30,12 +30,7 @@ const useFirebase = () => {
                 setUser(result.user)
             })
     }
-    const logOut = () => {
-        signOut(auth)
-            .then(() => {
-                setUser({})
-            })
-    }
+
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             if (user) {
@@ -46,13 +41,25 @@ const useFirebase = () => {
             }
         })
     }, [user])
+
+    const logOut = (e) => {
+        e?.preventDefault();
+        signOut(auth).then(() => {
+            console.log("signOut Done")
+        }).catch((error) => {
+            // An error happened.
+        });
+        console.log("logout")
+
+    }
     return {
         emailSignUp,
         emailSignIn,
         googleSignIn,
+        logOut,
         user,
-        setUser,
-        logOut
+        setUser
+
     }
 }
 export default useFirebase;

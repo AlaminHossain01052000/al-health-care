@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import useFirebase from '../../hooks/useFirebase';
 import "./Header.css";
 
 const Header = () => {
     const [navBg, setNavbg] = useState(false);
-    const { user, logOut } = useFirebase();
+
+
     const changeBg = () => {
         if (window.scrollY > 100) {
             setNavbg(true)
@@ -36,6 +36,7 @@ const Header = () => {
 
 
     window.addEventListener("scroll", changeBg)
+
     return (
         <div>
             <Navbar id="my-navbar" expand="lg" className="fixed-top">

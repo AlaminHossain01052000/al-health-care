@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
-import useFirebase from '../../hooks/useFirebase';
 import "./Signup.css";
 import googleLogo from "../../img/google-logo.png"
 import { Link } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 
 const Signup = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const { googleSignIn, emailSignUp, } = useFirebase();
+    const { googleSignIn, emailSignUp, } = useAuth();
     const getEmail = e => {
         setEmail(e.target.value);
     }
