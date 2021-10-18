@@ -1,0 +1,45 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Andada+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+#specialist .card{
+    padding: 15px;
+}
+#specialist .card-body .card-title{
+    font-family: 'Ubuntu', sans-serif;
+
+}
+#specialist .card:hover{
+    cursor: pointer;
+}
+#specialist .card img{
+    border-radius: 10px;
+}
+#specialist .card-body{
+    text-align: left;
+}
+#specialist .card-text{
+    font-family: 'Andada Pro', serif;
+}
+
+.btn-book-now {background-image: linear-gradient(to right, #C04848 0%, #480048  51%, #C04848  100%)}
+.btn-book-now {
+   margin: 10px;
+   padding: 10px 25px;
+   border:0px;
+   text-align: center;
+   text-transform: uppercase;
+   transition: 0.5s;
+   background-size: 200% auto;
+   color: white;            
+   box-shadow: 0 0 20px #eee;
+   border-radius: 10px;
+   display: block;
+ }
+
+ .btn-book-now:hover {
+   background-position: right center; /* change the direction of the change here */
+   color: #fff;
+   text-decoration: none;
+ }

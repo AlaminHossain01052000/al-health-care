@@ -78,7 +78,7 @@
         "id": 4,
         "name": "Patricia Lebsack",
         "username": "Karianne",
-        "email": "Julianne.OConner@kory.org",
+        "email": "Julianne@kory.org",
         "img": "https://i.ibb.co/KV0Cx3K/Portrait-of-smiling-doctor-looking-at-camera-on-background-of-his-working-colleagues.jpg",
         "specialist": "Nephrologist",
         "address": {
@@ -103,7 +103,7 @@
         "id": 5,
         "name": "Chelsey Dietrich",
         "username": "Kamren",
-        "email": "Lucio_Hettinger@annie.ca",
+        "email": "Lucio_Hett@annie.ca",
         "img": "https://i.ibb.co/tCCSnB9/Happy-young-male-doctor-using-tablet-computer-Guy-wearing-white-coat-and-standing-Medicine-and-techn.jpg",
         "specialist": "Nephrologist",
         "address": {
@@ -203,7 +203,7 @@
         "id": 9,
         "name": "Dr.Mike",
         "username": "Mike",
-        "email": "Chaim_McDermott@dana.io",
+        "email": "Chaim_@dana.io",
         "img": "https://i.ibb.co/QK0jNvt/mike.jpg",
         "specialist": "Orthopedics",
         "address": {
