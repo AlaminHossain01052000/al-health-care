@@ -3,7 +3,7 @@ import { Card, Button } from 'react-bootstrap';
 import "./Specialist.css";
 
 const Specialist = (props) => {
-    const { img, name, specialist, email, phone, website, id } = props.specialist;
+    const { img, name, specialist, email, phone, website } = props.specialist;
 
 
     return (

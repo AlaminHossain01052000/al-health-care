@@ -1,0 +1,11 @@
+/* Google Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Faustina&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mukta+Vaani:wght@500&display=swap');
+
+.service-text h1s{
+    font-family: 'Mukta Vaani', sans-serif;
+}
+.service-text p{
+    font-family:'Faustina', serif ;
+}

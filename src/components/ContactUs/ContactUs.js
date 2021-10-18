@@ -46,10 +46,10 @@ const ContactUs = () => {
                             <i className="fas fa-ambulance me-3"></i>2091
                         </p>
 
-                        <address style={{ color: "#c8d6e5" }}>
+                        <p style={{ color: "#c8d6e5" }}>
                             <i className="fas fa-hospital me-3"></i>
                             198/B Cld Rode,Narayanganj-1400,Narayanganj
-                        </address>
+                        </p>
                     </div>
                 </div>
 

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import "./Header.css";
 
 const Header = () => {
@@ -36,14 +37,14 @@ const Header = () => {
         <div>
             <Navbar id="my-navbar" expand="lg" className="fixed-top">
                 <Container>
-                    <Navbar.Brand href="#home" className="d-flex align-items-center">
+                    <Navbar.Brand as={Link} to="/home" className="d-flex align-items-center">
                         <img src="https://i.ibb.co/N1tj2K1/icon.png" className="w-100" alt="" />
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="#home">Home</Nav.Link>
-                            <Nav.Link href="#link">Our Services</Nav.Link>
+                            <Nav.Link as={Link} to="/home">Home</Nav.Link>
+                            <Nav.Link as={Link} to="/services">Our Services</Nav.Link>
                             <NavDropdown title="Our Specialists" id="basic-nav-dropdown">
                                 <NavDropdown.Item href="#action/3.1">Orthopedics</NavDropdown.Item>
                                 <NavDropdown.Item href="#action/3.2">Cardiologist</NavDropdown.Item>
