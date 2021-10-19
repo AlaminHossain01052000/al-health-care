@@ -9,8 +9,9 @@ const Signup = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [visibleError, setVisibleError] = useState(false);
 
-    const { googleSignIn, emailSignUp, user, setDisplayName } = useAuth();
+    const { googleSignIn, emailSignUp, user, setDisplayName, error } = useAuth();
 
     const getName = e => {
         setName(e.target.value);
@@ -33,12 +34,17 @@ const Signup = () => {
 
         emailSignUp(email, password);
 
-
+        if (error) {
+            setVisibleError(true);
+        }
     }
 
 
     return (
         <div className="signup-page">
+            {
+                visibleError && <p className="text-danger">Invalid Email or Password</p>
+            }
             <Form>
                 <Form.Group className="mb-3" controlId="formBasicName">
 
@@ -58,7 +64,7 @@ const Signup = () => {
                 </Form.Group>
 
                 <Button className="btn-submit" type="submit" onClick={handleSignUp}>
-                    Submit
+                    Sign Up
                 </Button>
                 <p>or</p>
                 <img onClick={googleSignIn} className="google-img" src={googleLogo} alt="" />

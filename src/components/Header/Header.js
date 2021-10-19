@@ -58,8 +58,7 @@ const Header = () => {
                             <Nav.Link as={Link} to="/specialist">Our Specialists</Nav.Link>
 
 
-                            {/* <Nav.Link as={Link} to="/login">Log In</Nav.Link>
-                            <button onClick={handleLogginOut}>Logout</button> */}
+
 
                             {
                                 user.email && <span className="nav-link">{user.displayName}</span>

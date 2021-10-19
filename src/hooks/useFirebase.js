@@ -6,6 +6,8 @@ import initializeFirebase from "../firebase/firebase.init";
 initializeFirebase();
 const useFirebase = () => {
     const [user, setUser] = useState({});
+    const [error, setError] = useState("");
+    const [isLoading, setIsLoading] = useState(true);
 
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
@@ -17,45 +19,79 @@ const useFirebase = () => {
 
                 setUser(result.user);
             })
+            .finally(() => {
+                setIsLoading(false)
+            })
+
+            .catch(error => {
+                setError(error.message);
+            })
+
     }
     const emailSignIn = (email, password) => {
+
+        setIsLoading(true);
+
         signInWithEmailAndPassword(auth, email, password)
             .then((result) => {
-                // Signed in 
+
                 setUser(result.user)
             })
+            .finally(() => {
+                setIsLoading(false)
+            })
+            .catch(error => {
+                setError(error.message);
+            })
+
     }
 
     const googleSignIn = () => {
+
+        setIsLoading(true)
+
         signInWithPopup(auth, googleProvider)
             .then(result => {
                 setUser(result.user)
             })
+            .finally(() => {
+                setIsLoading(false)
+            })
+            .catch(error => {
+                setError(error.message);
+            })
+
     }
     const loggingOut = () => {
+
+
+
         signOut(auth)
             .then(() => {
                 setUser({})
             })
+            .catch(error => {
+                setError(error.message);
+            })
+
     }
 
     const setDisplayName = (name) => {
         updateProfile(auth.currentUser, {
             displayName: name
         }).then(() => {
-            // Profile updated!
-            // ...
+            // setDisplayName
         }).catch((error) => {
-            // An error occurred
-            // ...
+            setError(error.message);
         });
     }
     useEffect(() => {
+
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user);
             }
-
+            setIsLoading(false);
 
         })
     }, [user])
@@ -68,7 +104,10 @@ const useFirebase = () => {
         user,
         loggingOut,
         setUser,
-        setDisplayName
+        setDisplayName,
+        error,
+        setError,
+        isLoading
 
     }
 }
