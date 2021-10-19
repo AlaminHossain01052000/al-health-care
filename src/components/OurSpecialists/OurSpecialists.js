@@ -1,14 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Container } from 'react-bootstrap';
 import Slider from "react-slick";
+import useSpecialist from '../../hooks/useSpecialist';
 import Specialist from '../Specialist/Specialist';
 const OurSpecialists = () => {
-    const [specialists, setSpecialists] = useState([]);
-    useEffect(() => {
-        fetch("./specialists.json")
-            .then(res => res.json())
-            .then(data => setSpecialists(data));
-    }, [])
+    const { specialists } = useSpecialist();
+
     const settings = {
         className: "center",
         centerMode: true,

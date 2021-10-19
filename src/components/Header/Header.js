@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 import "./Header.css";
 
 const Header = () => {
     const [navBg, setNavbg] = useState(false);
-
+    const { user, loggingOut } = useAuth();
 
     const changeBg = () => {
         if (window.scrollY > 100) {
@@ -35,7 +36,12 @@ const Header = () => {
     }, [navBg])
 
 
-    window.addEventListener("scroll", changeBg)
+    window.addEventListener("scroll", changeBg);
+    const handleLogginOut = (e) => {
+        e.preventDefault();
+
+        loggingOut();
+    }
 
     return (
         <div>
@@ -49,19 +55,21 @@ const Header = () => {
                         <Nav className="me-auto">
                             <Nav.Link as={Link} to="/home">Home</Nav.Link>
                             <Nav.Link as={Link} to="/services">Our Services</Nav.Link>
-                            <NavDropdown title="Our Specialists" id="basic-nav-dropdown">
-                                <NavDropdown.Item href="#action/3.1">Orthopedics</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.2">Cardiologist</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3">Gynochologist</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3">Neurologist</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3">Nephrologist</NavDropdown.Item>
+                            <Nav.Link as={Link} to="/specialist">Our Specialists</Nav.Link>
 
-                            </NavDropdown>
 
-                            <Nav.Link as={Link} to="/login">Log In</Nav.Link>
+                            {/* <Nav.Link as={Link} to="/login">Log In</Nav.Link>
+                            <button onClick={handleLogginOut}>Logout</button> */}
 
-                            <Nav.Link href="#home">View Appointments</Nav.Link>
-                            <Nav.Link href="#home">Contact Us</Nav.Link>
+                            {
+                                user.email && <span className="nav-link">{user.displayName}</span>
+                            }
+                            {user?.email ? <Nav.Link as={Link} onClick={handleLogginOut} to="/login">Log Out</Nav.Link> : <Nav.Link as={Link} to="/login">Log In</Nav.Link>}
+
+
+
+                            <Nav.Link as={Link} to="/viewappointment">View Appointments</Nav.Link>
+                            <Nav.Link as={Link} to="/contactus">Contact Us</Nav.Link>
 
                         </Nav>
                         <Nav.Link as={Link} to="/signup"><button className="btn btn-register">Register</button></Nav.Link>

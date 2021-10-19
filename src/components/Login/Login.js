@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import useFirebase from '../../hooks/useFirebase';
+import useAuth from '../../hooks/useAuth';
 import googleLogo from "../../img/google-logo.png";
 
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const { emailSignIn, googleSignIn, logOut } = useFirebase();
+    const { emailSignIn, googleSignIn } = useAuth();
 
     const getEmail = (e) => {
         setEmail(e.target.value);
@@ -20,9 +20,8 @@ const Login = () => {
         emailSignIn(email, password);
 
     }
-    const handleLogOut = () => {
-        logOut();
-    }
+
+
     return (
         <div className="login-page">
             <Form>
@@ -38,9 +37,7 @@ const Login = () => {
                 <Button className="btn-submit" type="submit" onClick={handleSignIn}>
                     Submit
                 </Button>
-                <Button className="btn-submit" type="submit" onClick={handleLogOut}>
-                    Logout
-                </Button>
+
             </Form>
             <h1>Login Using  <img onClick={googleSignIn} className="google-img" src={googleLogo} alt="" /></h1>
 

@@ -6,10 +6,15 @@ import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
 const Signup = () => {
+    const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const { googleSignIn, emailSignUp, } = useAuth();
+    const { googleSignIn, emailSignUp, user, setDisplayName } = useAuth();
+
+    const getName = e => {
+        setName(e.target.value);
+    }
     const getEmail = e => {
         setEmail(e.target.value);
     }
@@ -17,21 +22,27 @@ const Signup = () => {
     const getPassword = (e) => {
         setPassword(e.target.value);
     }
-
+    if (user.email) {
+        setDisplayName(name);
+    }
 
     const handleSignUp = (e) => {
         e.preventDefault();
+
+
+
         emailSignUp(email, password);
 
 
     }
+
 
     return (
         <div className="signup-page">
             <Form>
                 <Form.Group className="mb-3" controlId="formBasicName">
 
-                    <Form.Control type="name" placeholder="Enter Name" />
+                    <Form.Control onBlur={getName} type="name" placeholder="Enter Name" />
 
                 </Form.Group>
 

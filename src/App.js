@@ -1,5 +1,6 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './App.css';
+import ContactUsRoute from './components/ContactUsRoute/ContactUsRoute';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 
@@ -11,6 +12,8 @@ import ServiceDetails from './components/ServiceDetails/ServiceDetails';
 import ServicesRoute from './components/ServicesRoute/ServicesRoute';
 import Signup from './components/Signup/Signup';
 import SpecialistDetails from './components/SpecialistDetails/SpecialistDetails';
+import SpecialistRoute from './components/SpecialistRoute/SpecialistRoute';
+import ViewAppointments from './components/ViewAppointments/ViewAppointments';
 import AuthProvider from './context/AuthProvider';
 
 function App() {
@@ -28,13 +31,17 @@ function App() {
             <Route path="/home">
               <Home></Home>
             </Route>
-            <Route path="/services">
+            <PrivateRoute path="/services">
               <ServicesRoute></ServicesRoute>
 
-            </Route>
+            </PrivateRoute>
+            <PrivateRoute path="/specialist">
+              <SpecialistRoute></SpecialistRoute>
+            </PrivateRoute>
             <PrivateRoute path="/servicedetails/:serviceId">
               <ServiceDetails></ServiceDetails>
             </PrivateRoute>
+
             <PrivateRoute path="/specialistDetails/:specialistId">
 
               <SpecialistDetails></SpecialistDetails>
@@ -45,6 +52,12 @@ function App() {
             <Route path="/login">
               <Login></Login>
             </Route>
+            <PrivateRoute path="/viewappointment">
+              <ViewAppointments></ViewAppointments>
+            </PrivateRoute>
+            <PrivateRoute path="/contactus">
+              <ContactUsRoute></ContactUsRoute>
+            </PrivateRoute>
             <Route path="*">
               <NotFound></NotFound>
             </Route>
