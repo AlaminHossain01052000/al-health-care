@@ -8,7 +8,8 @@ const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const { emailSignIn, googleSignIn, error } = useAuth();
+    const { emailSignIn, googleSignIn, error, user } = useAuth();
+
     const history = useHistory();
     const location = useLocation();
 
